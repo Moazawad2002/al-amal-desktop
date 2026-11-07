@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream-100 text-bronze-900 font-sans antialiased overflow-hidden select-none;
+  }
+}
+
+/* Custom Desktop Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4C5A9;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D49B24;
+}
+
+@media print {
+  body {
+    overflow: visible !important;
+    background: white !important;
+  }
+  aside, header, button {
+    display: none !important;
+  }
+  #printable-invoice {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}

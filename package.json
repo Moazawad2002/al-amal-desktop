@@ -1,0 +1,68 @@
+{
+  "name": "al-amal-distribution-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Al Amal Distribution Management System - Enterprise Windows Desktop ERP Application",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "dev:electron": "concurrently -k \"vite\" \"npm run electron:wait\"",
+    "electron:wait": "cross-env NODE_ENV=development node scripts/wait-and-launch.js",
+    "build": "tsc && vite build",
+    "build:electron": "tsc -p tsconfig.node.json && node -e \"fs.writeFileSync('dist-electron/package.json', JSON.stringify({type:'commonjs'}))\"",
+    "build:win": "npm run build && npm run build:electron && electron-builder --win",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.456.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.13.3",
+    "tailwind-merge": "^2.5.4",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.4"
+  },
+  "build": {
+    "appId": "com.alamal.distribution",
+    "productName": "Al Amal Distribution Management System",
+    "directories": {
+      "output": "dist-installer"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

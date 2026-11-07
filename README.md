@@ -6,6 +6,10 @@
 [![UI: React + TypeScript](https://img.shields.io/badge/Frontend-React%2018%20%7C%20TypeScript-3178C6?logo=typescript&logoColor=white)](https://reactjs.org/)
 [![Database: Supabase RLS](https://img.shields.io/badge/Database-Supabase%20PostgreSQL%20RLS-3ECF8E?logo=supabase&logoColor=white)](https://supabase.com/)
 
+<p align="center">
+  <img src="docs/preview.svg" alt="Al Amal Desktop ERP Windows Application" width="100%">
+</p>
+
 ---
 
 ## 🌾 Overview & Purpose

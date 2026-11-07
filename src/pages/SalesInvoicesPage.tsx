@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FileText,
   Plus,
@@ -33,6 +33,12 @@ export const SalesInvoicesPage: React.FC = () => {
   const [selectedInvoice, setSelectedInvoice] = useState<SalesInvoice | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+
+  useEffect(() => {
+    if (user) {
+      setInvoices(mockDb.getInvoices(user));
+    }
+  }, [user]);
 
   // Form State
   const customers = mockDb.getCustomers(user!);

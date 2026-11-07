@@ -24,10 +24,11 @@ const initialReps: SalesRepresentative[] = [
 ];
 
 const initialUsers: UserProfile[] = [
-  { id: 'usr-mgr', email: 'manager@alamal-eg.com', fullName: 'المهندس مصطفى رضوان (المدير العام)', role: 'manager', phone: '01000000001' },
-  { id: 'usr-rep1', email: 'rep1@alamal-eg.com', fullName: 'أحمد حسن (مندوب القاهرة الشمالية)', role: 'sales_rep', representativeId: 'rep-01', phone: '01012345671' },
-  { id: 'usr-rep2', email: 'rep2@alamal-eg.com', fullName: 'محمود علي (مندوب الجيزة والهرم)', role: 'sales_rep', representativeId: 'rep-02', phone: '01123456782' },
-  { id: 'usr-rep3', email: 'rep3@alamal-eg.com', fullName: 'عمر خالد (مندوب شرق القاهرة والتجمع)', role: 'sales_rep', representativeId: 'rep-03', phone: '01234567893' },
+  { id: 'usr-mgr', email: 'ceo@alamal-eg.com', fullName: 'المهندس مصطفى رضوان (الرئيس التنفيذي - CEO)', role: 'manager', phone: '01000000001' },
+  { id: 'usr-sales-mgr', email: 'sales.mgr@alamal-eg.com', fullName: 'أحمد حسن (مدير المبيعات - Sales Manager)', role: 'manager', phone: '01012345671' },
+  { id: 'usr-acct', email: 'accountant@alamal-eg.com', fullName: 'منى الجمل (المحاسب المالي - Senior Accountant)', role: 'manager', phone: '01055554444' },
+  { id: 'usr-wh', email: 'warehouse@alamal-eg.com', fullName: 'محمود علي (أمين المستودع - Warehouse Keeper)', role: 'manager', phone: '01123456782' },
+  { id: 'usr-rep1', email: 'rep1@alamal-eg.com', fullName: 'عمر خالد (مندوب مبيعات - Sales Rep - خط القاهرة)', role: 'sales_rep', representativeId: 'rep-01', phone: '01234567893' },
 ];
 
 const initialAccounts: FinancialAccount[] = [

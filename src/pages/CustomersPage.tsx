@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Store,
   Plus,
@@ -27,6 +27,12 @@ export const CustomersPage: React.FC = () => {
   const [typeFilter, setTypeFilter] = useState('all');
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null);
+
+  useEffect(() => {
+    if (user) {
+      setCustomers(mockDb.getCustomers(user));
+    }
+  }, [user]);
 
   // New Customer Form State
   const reps = mockDb.getReps();

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BadgeDollarSign,
   Plus,
@@ -29,6 +29,12 @@ export const CollectionsReceivablesPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isRecordOpen, setIsRecordOpen] = useState(false);
   const [selectedReceipt, setSelectedReceipt] = useState<CustomerPayment | null>(null);
+
+  useEffect(() => {
+    if (user) {
+      setPayments(mockDb.getPayments(user));
+    }
+  }, [user]);
 
   const customers = mockDb.getCustomers(user!);
   const invoices = mockDb.getInvoices(user!);
